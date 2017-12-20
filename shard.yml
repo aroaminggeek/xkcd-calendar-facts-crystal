@@ -1,0 +1,13 @@
+name: calendarfacts
+version: 0.1.0
+
+authors:
+  - A Roaming Geek <github@aroaminggeek.com>
+
+targets:
+  calendarfacts:
+    main: src/calendarfacts.cr
+
+crystal: 0.23.1
+
+license: MIT
