@@ -9,10 +9,11 @@
 require "./calendarfacts/*"
 
 Equinox  = ["Fall", "Spring"]
-Solstice = ["Summer", "Winter"]
-Olympics = ["Summer", "Winter"]
-Sunrise  = ["Latest", "Earliest"]
-Sunset   = ["Latest", "Earliest"]
+Summer = ["Olympics","Solstice"]
+Winter = ["Olympics","Solstice"]
+Latest = ["Sunrise","Sunset"]
+Earliest = ["Sunrise","Sunset"]
+
 Daylight = ["Saving", "Savings"]
 Leap     = ["Day", "Year"]
 Moon     = ["Harvest", "Super", "Blood"]
@@ -28,9 +29,9 @@ calendar_type = ["Gregorian",
                  "Mayan",
                  "Lunar",
                  "iPhone"]
-manner = [" happens earlier",
-          " happens later",
-          " happens at the wrong time",
+manner = [" happens earlier every year",
+          " happens later every year",
+          " happens at the wrong time every year",
           " might not happen",
           " might happen twice"]
 
@@ -40,20 +41,20 @@ tz_legislation = ["Indiana",
                   "Arizona",
                   "Russia"]
 
-celestial1 = ["the precession",
-              "the libration",
-              "the nutation",
-              "the libation",
-              "the eccentricity",
-              "the obliquity"]
+celestial1 = ["the precession of",
+              "the libration of",
+              "the nutation of",
+              "the libation of",
+              "the eccentricity of",
+              "the obliquity of"]
 
-celestial2 = ["Moon",
-              "Sun",
-              "Earth's axis",
-              "equator",
-              "prime meridian",
-              "International Date Line",
-              "Mason-Dixon Line"]
+celestial2 = ["the Moon",
+              "the Sun",
+              "the Earth's axis",
+              "the equator",
+              "the prime meridian",
+              "the International Date Line",
+              "the Mason-Dixon Line"]
 
 arbitrary_decision = ["Benjamin Franklin",
                       "Isaac Newton",
@@ -83,20 +84,20 @@ Equinox.each do |i|
   recurring_event << i + " Equinox"
 end
 
-Solstice.each do |s|
-  recurring_event << s + " Solstice"
+Summer.each do |s|
+  recurring_event << "Summer " + s
 end
 
-Olympics.each do |s|
-  recurring_event << s + " Olympics"
+Winter.each do |s|
+  recurring_event << "Winter " + s
 end
 
-Sunrise.each do |s|
-  recurring_event << s + " Sunrise"
+Latest.each do |s|
+  recurring_event << "Latest " + s
 end
 
-Sunset.each do |s|
-  recurring_event << s + " Sunset"
+Earliest.each do |s|
+  recurring_event << "Earliest " + s
 end
 Daylight.each do |d|
   recurring_event << "Daylight " + d + " Time"
@@ -123,7 +124,7 @@ end
 
 celestial1.each do |c1|
   celestial2.each do |c2|
-    c3 = c1 + " of the " + c2
+    c3 = c1 + " " + c2
     phenomena << c3
   end
 end
